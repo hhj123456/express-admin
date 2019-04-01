@@ -14,7 +14,7 @@
 				</el-form-item> -->
 			</el-form>
 		</el-col>
-		<template>
+<!-- 		<template>
 		  <el-tabs v-model="activeName" @tab-click="handleClick">
 		    <el-tab-pane label="全部" name="6"></el-tab-pane>
 		    <el-tab-pane label="待审核" name="0"></el-tab-pane>
@@ -24,7 +24,7 @@
 		    <el-tab-pane label="配送成功" name="4"></el-tab-pane>
 		    <el-tab-pane label="失败" name="5"></el-tab-pane>
 		  </el-tabs>
-		</template>
+		</template> -->
 
 		<!--列表-->
 		<el-table :data="users" highlight-current-row v-loading="listLoading" style="width: 100%;" border>
@@ -34,16 +34,16 @@
 			</el-table-column>
 			<el-table-column prop="userphone" label="手机号" width="130" align="center">
 			</el-table-column>
-			<el-table-column prop="usermessage" label="取货短信" width="120"
+			<el-table-column prop="kdmessage" label="取货短信" width="120"
 			show-overflow-tooltip align="center">
 			</el-table-column>
 			<el-table-column prop="sendtime" label="送达时间" width="120" align="center">
 			</el-table-column>
-			<el-table-column prop="sendaddress" label="地址"  align="center"  show-overflow-tooltip>
+			<el-table-column prop="address" label="地址"  align="center"  show-overflow-tooltip>
 			</el-table-column>
-			<el-table-column prop="state" label="状态"  width="100" align="center">
+			<el-table-column prop="ok" label="状态"  width="100" align="center">
 				<template slot-scope="scope">
-					<span :style="color[scope.row.state]">{{ state[scope.row.state] }}</span>
+					<span :style="color[scope.row.ok]">{{scope.row.ok == 1 ? "已取件" : "待取件"}}</span>
 				</template>
 			</el-table-column>
 			<el-table-column prop="createtime" label="订单创建时间"  width="130" align="center" show-overflow-tooltip>
@@ -80,13 +80,13 @@
 				<el-form-item label="下单时间" prop="createtime">
 					<el-input v-model="editForm.createtime" auto-complete="off" disabled></el-input>
 				</el-form-item>
-				<el-form-item label="取货短信" prop="usermessage">
-					<el-input v-model="editForm.usermessage" :rows="5" type="textarea" style="width:196.4px;" disabled></el-input>
+				<el-form-item label="取货短信" prop="kdmessage">
+					<el-input v-model="editForm.kdmessage" :rows="5" type="textarea" style="width:196.4px;" disabled></el-input>
 				</el-form-item>
 				<el-form-item label="送达地址">
-					<el-input type="textarea" :rows="4" v-model="editForm.sendaddress" style="width:196.4px" disabled></el-input>
+					<el-input type="textarea" :rows="4" v-model="editForm.address" style="width:196.4px" disabled></el-input>
 				</el-form-item>
-				<el-form-item label="状态">
+				<!-- <el-form-item label="状态">
 					<el-select v-model="editForm.state" placeholder="请选择" @change="getoption">
 					    <el-option
 					      v-for="item in options"
@@ -99,11 +99,11 @@
 				 </el-form-item>
 				<el-form-item label="原因" v-show="reasonVisable">
 					<el-input v-model="editForm.reason"></el-input>
-				</el-form-item>
+				</el-form-item> -->
 			</el-form>
 			<div slot="footer" class="dialog-footer">
 				<el-button @click.native="editFormVisible = false">取消</el-button>
-				<el-button type="primary" @click.native="editSubmit" :loading="editLoading">提交</el-button>
+			<!-- 	<el-button type="primary" @click.native="editSubmit" :loading="editLoading">提交</el-button> -->
 			</div>
 		</el-dialog>
 

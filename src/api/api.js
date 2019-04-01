@@ -2,11 +2,12 @@ import axios from 'axios';
 const Qs = require('qs');
 
 // let base = 'https://dgerbu6e.qcloud.la/weapp';
-let base = 'http://111.230.237.84/weapp/index.php?';
+// let base = 'http://47.101.167.187/weapp/index.php?';
+let base = "/api";
 //登录接口
 export const requestLogin = params => { 
 	return axios.post(
-		`/weapp/index.php?/adminlogin/index`,
+		`${base}/adminlogin/index`,
 		Qs.stringify(params),
 		{
 	        headers: {
@@ -18,7 +19,7 @@ export const requestLogin = params => {
 //获取拿快递的信息接口
 export const getExpressList = params => { 
 	return axios.post(
-		`/weapp/index.php?/admingetexpress/index`,
+		`${base}/admingetexpress/index`,
 		Qs.stringify(params),
 		{
 	        headers: {
@@ -31,7 +32,7 @@ export const getExpressList = params => {
 //提交状态值
 export const submitState = params => { 
 	return axios.post(
-		`/weapp/index.php?/admingetexpress/update`,
+		`${base}/admingetexpress/update`,
 		Qs.stringify(params),
 		{
 	        headers: {
@@ -45,7 +46,7 @@ export const submitState = params => {
 //获取代发快递的信息接口 
 export const getSendExpress = params => { 
 	return axios.post(
-		`/weapp/index.php?/admingetsendexpress/index`,
+		`${base}/admingetsendexpress/index`,
 		Qs.stringify(params),
 		{
 	        headers: {
@@ -58,7 +59,7 @@ export const getSendExpress = params => {
 //提交状态值
 export const submitSendState = params => { 
 	return axios.post(
-		`/weapp/index.php?/admingetsendexpress/update`,
+		`${base}/admingetsendexpress/update`,
 		Qs.stringify(params),
 		{
 	        headers: {
