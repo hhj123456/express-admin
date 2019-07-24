@@ -45,6 +45,7 @@ You can change theme by
    import './assets/theme/your-theme/index.css'
 ```
 4. Edit src/styles/vars.scss
+5. da
 
 ![theme-blue](https://raw.githubusercontent.com/taylorchen709/markdown-images/master/vueadmin/rec-demo.gif)
 ![theme-green](https://raw.githubusercontent.com/taylorchen709/markdown-images/master/vueadmin/theme-green.png)
